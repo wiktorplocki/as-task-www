@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const LodashModuleReplacement = require('lodash-webpack-plugin');
 
 module.exports = {
   entry: './src/App.js',
@@ -42,6 +43,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
+          plugins: ['lodash'],
           presets: [
             ['@babel/preset-env', { targets: { chrome: 68 } }],
             '@babel/preset-react'
