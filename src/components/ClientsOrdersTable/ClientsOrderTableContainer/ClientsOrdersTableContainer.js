@@ -1,9 +1,9 @@
 import React from 'react';
 import { Col, Row, Table } from 'reactstrap';
-import { fetchService } from '../../helpers/fetchService';
+import { fetchService } from '../../../helpers/fetchService';
 
-import ClientsOrdersTable from '../../components/ClientsOrdersTable/ClientsOrdersTable';
-import ClientsOrdersTableHead from '../../components/ClientsOrdersTable/ClientsOrdersTableHead';
+import ClientsOrdersTable from '../ClientsOrdersTable';
+import ClientsOrdersTableHead from '../ClientsOrderTableHead/ClientsOrdersTableHead';
 
 class ClientsOrdersTableContainer extends React.Component {
   constructor(props) {
