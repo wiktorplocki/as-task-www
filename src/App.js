@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
@@ -7,22 +7,16 @@ import {
   Redirect
 } from 'react-router-dom';
 import { Container, Col, Row } from 'reactstrap';
-import './stylesheets/main.scss';
 
-import Loading from './components/Loading/Loading';
 import Header from './components/Header/Header';
-// import ClientsOrdersTableContainer from './containers/ClientsOrdersTableContainer/ClientsOrdersTableContainer';
-
-const ClientsOrdersTableContainer = lazy(() =>
-  import('./containers/ClientsOrdersTableContainer/ClientsOrdersTableContainer')
-);
+import ClientsOrdersTableContainer from './components/ClientsOrdersTable/ClientsOrderTableContainer/ClientsOrdersTableContainer';
 
 const App = () => (
   <Container fluid>
     <Row>
       <Col>
         <Router>
-          <Suspense fallback={<Loading />}>
+          <React.Fragment>
             <Header />
             <Switch>
               <Route
@@ -51,7 +45,7 @@ const App = () => (
                 render={() => <Redirect to="/clients-orders" />}
               />
             </Switch>
-          </Suspense>
+          </React.Fragment>
         </Router>
       </Col>
     </Row>
