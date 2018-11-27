@@ -43,7 +43,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          plugins: ['lodash', '@babel/plugin-syntax-dynamic-import'],
+          plugins: ['lodash'],
           presets: [
             ['@babel/preset-env', { targets: { chrome: 68 } }],
             '@babel/preset-react'
