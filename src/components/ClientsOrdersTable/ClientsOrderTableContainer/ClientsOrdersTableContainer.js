@@ -43,7 +43,7 @@ class ClientsOrdersTableContainer extends React.Component {
               <tbody>
                 {data.reverse().map(item => (
                   <ClientsOrdersTable
-                    client={item}
+                    list={item}
                     path={location.pathname}
                     key={Math.random()}
                   />

@@ -6,37 +6,37 @@ class ClientsOrdersTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clientState: null
+      detail: null
     };
   }
 
   componentDidMount() {
-    const { client, path } = this.props;
-    if (!_.isEmpty(client) && path === '/clients-orders') {
-      fetchService(`http://localhost:3000/clients/${client._id}`)
-        .then(clientState => this.setState({ clientState }))
+    const { list, path } = this.props;
+    if (!_.isEmpty(list) && path === '/clients-orders') {
+      fetchService(`http://localhost:3000/clients/${list._id}`)
+        .then(detail => this.setState({ detail }))
         .catch(err => console.error(err));
     }
   }
 
   render() {
-    const { clientState } = this.state;
-    const { client } = this.props;
-    if (!_.isEmpty(clientState) && !_.isEmpty(client)) {
+    const { detail } = this.state;
+    const { list } = this.props;
+    if (!_.isEmpty(detail) && !_.isEmpty(list)) {
       return (
         <tr>
-          {Object.values(clientState)
+          {Object.values(detail)
             .reverse()
             .map(value => (
               <td key={Math.random()}>{value}</td>
             ))}
-          <td key={Math.random()}>{client.total}</td>
+          <td key={Math.random()}>{list.total}</td>
         </tr>
       );
     }
     return (
       <tr>
-        {Object.values(client).map(value => (
+        {Object.values(list).map(value => (
           <td key={Math.random()}>{value}</td>
         ))}
       </tr>
