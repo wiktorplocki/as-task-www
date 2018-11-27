@@ -9,7 +9,7 @@ import {
 import { Container, Col, Row } from 'reactstrap';
 
 import Header from './components/Header/Header';
-import ClientsOrdersTableContainer from './components/ClientsOrdersTable/ClientsOrderTableContainer/ClientsOrdersTableContainer';
+import ClientsOrdersTableContainer from './components/ClientsOrdersTable/ClientsOrdersTable';
 
 const App = () => (
   <Container fluid>

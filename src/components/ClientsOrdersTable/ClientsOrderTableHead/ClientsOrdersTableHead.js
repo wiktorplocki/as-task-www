@@ -4,9 +4,9 @@ const ClientsOrdersTableHead = ({ path }) => (
   <tr>
     {path === '/clients-orders' ? (
       <React.Fragment>
-        <th scope="col">Surname</th>
-        <th scope="col">Name</th>
         <th scope="col">Client ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
         <th scope="col">Total Sum of All Orders</th>
       </React.Fragment>
     ) : path === '/clients' ? (
